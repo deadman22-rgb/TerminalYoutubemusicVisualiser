@@ -106,4 +106,4 @@ This project uses the MIT License - see the LICENSE file for details.
 
 ## 👋 Wrap Up
 
-Enjoy your music with some terminal eye-candy! If you have ideas to make it better, feel free to contribute or just have fun with it. 
+Enjoy your music with some terminal eye-candy! If you have ideas to make it better, feel free to contribute or just have fun with it. i will probably addd a way here if anyone wants to buy me a coffee or enriched uranium
