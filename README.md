@@ -16,7 +16,7 @@ Works great with YouTube Music and other media players that support playerctl!
 
 ## 🚀 Quick Install (Arch Linux)
 
-We've made installation super easy. Just double-click the `install.sh` script or run:
+I've made installation super easy. Just double-click the `install.sh` script or run:
 
 ```bash
 ./install.sh
@@ -24,7 +24,7 @@ We've made installation super easy. Just double-click the `install.sh` script or
 
 The installer will:
 - Check and install all required packages using pacman
-- Install YouTube Music from AUR if you want it (and you have yay)
+- Install YouTube Music from AUR if you want it (and you have yay youtube-music-bin)
 - Create a desktop entry so you can launch from your app menu
 - Set up a launcher script for easy double-clicking
 
@@ -33,7 +33,7 @@ The installer will:
 - **Arch Linux** (or other Linux with slight modifications)
 - **Kitty Terminal** - For showing images in the terminal
 - **TMux** - For the split-screen magic
-- **Cava** - For those sweet, sweet audio visualizations
+- **Cava** - For the audio visualizations
 - **Python with Pillow** - For handling album artwork
 - **playerctl** - To grab song info
 
