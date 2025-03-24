@@ -14,6 +14,9 @@ Ever wanted your terminal to look awesome while playing music? This tool creates
 
 Works great with YouTube Music and other media players that support playerctl!
 
+now you might be wondering why make something like this ?? becasue well 
+![Monkey Neuron Activation](https://media.tenor.com/Tx7ph1gRGFQAAAAM/monkey-monke.gif)
+
 ## 🚀 Quick Install (Arch Linux)
 
 I've made installation super easy. Just double-click the `install.sh` script or run:
