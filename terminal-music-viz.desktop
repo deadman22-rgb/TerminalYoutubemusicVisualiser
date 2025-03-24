@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=Terminal Music Visualizer
+Comment=Audio visualization with album art in terminal
+Exec=bash -c 'cd "$(dirname "%k")" && ./launch-visualizer.sh'
+Icon=multimedia-volume-control
+Terminal=false
+Categories=AudioVideo;Audio;Music;
+Keywords=music;visualizer;audio;
+MimeType=application/x-executable; 
