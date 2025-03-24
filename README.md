@@ -2,7 +2,7 @@
 
 A fun terminal-based visualization tool that shows album art alongside audio waveforms while you jam to your tunes.
 
-![Terminal Music Visualizer Demo](docs/demo.gif)
+![Terminal Music Visualizer Demo](showcase.gif)
 
 ## ✨ What's This?
 
@@ -13,6 +13,9 @@ Ever wanted your terminal to look awesome while playing music? This tool creates
 - Clean layout with no pesky terminal prompts to ruin the vibe
 
 Works great with YouTube Music and other media players that support playerctl!
+
+now you might be wondering why make something like this ?? becasue well 
+![Monkey Neuron Activation](https://media.tenor.com/Tx7ph1gRGFQAAAAM/monkey-monke.gif)
 
 ## 🚀 Quick Install (Arch Linux)
 
@@ -99,6 +102,10 @@ terminal-music-viz/
 - **No album art?** Check if your player provides artwork via MPRIS
 - **Weird display issues?** Make sure you're using Kitty terminal
 - **Not working?** Check the debug log at `/tmp/music_viz_debug.log`
+
+## 👾 known bugs 
+- **when changing songs, it causes the albumm cover to show in the cava pane which i dont know why is happening if you happen to know why or can help me out, try to make changes i will merge them
+![Known bugs](knownbugs.gif)  
 
 ## 📜 License
 
