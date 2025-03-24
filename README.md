@@ -1,112 +1,109 @@
 # 🎵 Terminal Music Visualizer
 
-A minimal terminal-based music player visualization tool that displays album art alongside audio visualizations.
+A fun terminal-based visualization tool that shows album art alongside audio waveforms while you jam to your tunes.
 
 ![Terminal Music Visualizer Demo](docs/demo.gif)
 
-## ✨ Features
+## ✨ What's This?
 
-- **Audio Visualization** - Beautiful audio waveform using Cava
-- **Album Art Display** - Shows album cover of currently playing music in the terminal
-- **Song Information** - Displays title, artist, and album information
-- **Minimal Dependencies** - Uses tools likely already on your system
-- **Automatic Updates** - Refreshes when songs change
+Ever wanted your terminal to look awesome while playing music? This tool creates a split view with:
 
-## 📋 Requirements
+- A cool audio waveform that bounces to your music on the left
+- Album art and song details on the right
+- Clean layout with no pesky terminal prompts to ruin the vibe
 
-- **Linux** (Tested on Arch Linux)
-- **Kitty Terminal** - For image display capabilities
-- **TMux** - For terminal multiplexing
-- **Python 3** - For album art processing
-- **Cava** - For audio visualization
-- **playerctl** - For media info retrieval
-- **PIL/Pillow** - Python imaging library
+Works great with YouTube Music and other media players that support playerctl!
 
-## 🚀 Installation
+## 🚀 Quick Install (Arch Linux)
 
-1. Clone this repository:
-```bash
-git clone https://github.com/deadman22th08/yt-terminal.git
-cd yt-terminal
-```
-
-2. Install dependencies (Arch Linux example):
-```bash
-sudo pacman -S tmux cava playerctl python-pillow kitty
-```
-
-3. Make scripts executable:
-```bash
-chmod +x cavayt.sh get_cover.py
-```
-
-## 🎮 Usage
-
-Simply run the script:
+We've made installation super easy. Just double-click the `install.sh` script or run:
 
 ```bash
-./cavayt.sh
+./install.sh
 ```
 
-The script will:
-1. Create a tmux session with a 70/30 split layout
-2. Run Cava in the left pane (70% width)
-3. Display album art and song info in the right pane (30% width)
-4. Automatically update when the song changes
+The installer will:
+- Check and install all required packages using pacman
+- Install YouTube Music from AUR if you want it (and you have yay)
+- Create a desktop entry so you can launch from your app menu
+- Set up a launcher script for easy double-clicking
 
-Press `Ctrl+C` to quit.
+## 📋 What You'll Need
 
-## ⚙️ How It Works
+- **Arch Linux** (or other Linux with slight modifications)
+- **Kitty Terminal** - For showing images in the terminal
+- **TMux** - For the split-screen magic
+- **Cava** - For those sweet, sweet audio visualizations
+- **Python with Pillow** - For handling album artwork
+- **playerctl** - To grab song info
 
-The visualizer consists of two main components:
+## 🎮 How to Use It
 
-1. **cavayt.sh**: The main Bash script that:
-   - Creates and manages the tmux layout
-   - Monitors for song changes using playerctl
-   - Updates album art and song information
-   - Handles window management and cleanup
+After installation, you have three easy ways to start:
 
-2. **get_cover.py**: Python script that:
-   - Retrieves album artwork from local paths
-   - Processes images for terminal display
-   - Saves artwork to a temporary location
+1. **Double-click** the `launch-visualizer.sh` file
+2. Launch from your **applications menu**
+3. Run it directly with:
+   ```bash
+   ./cavayt.sh
+   ```
 
-The script monitors your currently playing media using `playerctl` and updates the display whenever a new song starts playing.
+Then just sit back and enjoy the show! It automatically detects song changes and updates the display.
 
-## 🧩 File Structure
+Press `Ctrl+C` when you want to quit.
+
+## 🆕 Cool New Features!
+
+- **Persistent Album Art** - Album covers are now saved in the program folder instead of /tmp, so they stick around between sessions
+- **Double-Click to Run** - No more command line needed! Just click and enjoy
+- **Desktop Integration** - Appears in your application menu like any regular app
+- **One-Step Installation** - All dependencies handled automatically
+
+## ⚙️ How It Actually Works
+
+The visualizer is pretty simple but clever:
+
+1. It creates a tmux session with three panes:
+   - Left pane (70%): Runs Cava for audio visualization
+   - Top-right pane: Shows album art
+   - Bottom-right pane: Displays song info
+
+2. In the background, it constantly checks what's playing using playerctl, and when the song changes:
+   - Gets the new song info
+   - Grabs the album art using the Python helper
+   - Updates the display
+
+## 🔧 Want to Tinker?
+
+Feel free to customize things:
+
+- Change the split ratio by tweaking the `-p 30` value in the script
+- Modify how song info appears by editing the `update_song_info` function
+- The album art is saved to the same folder as the script, so it's easy to find
+
+## 🛠️ File Structure
 
 ```
-yt-terminal/
-├── cavayt.sh         # Main script
-├── get_cover.py      # Album art processor
-└── README.md         # This documentation
+terminal-music-viz/
+├── cavayt.sh            # Main script that runs everything
+├── get_cover.py         # Python script for album art
+├── album_cover.jpg      # The current/last album cover
+├── install.sh           # Installation script
+├── launch-visualizer.sh # Double-click launcher
+└── README.md            # You are here!
 ```
-
-## 🔧 Customization
-
-You can customize the appearance by editing the following:
-
-- Adjust the split ratio by changing the `-p 30` value in the tmux split window command
-- Modify the song info formatting in the `update_song_info` function
-- Change album art size by modifying the kitty icat parameters
 
 ## ❓ Troubleshooting
 
-- **No album art displayed**: Ensure your media player provides album art via MPRIS
-- **Cava segmentation fault**: Try updating Cava or using the fallback visualization
-- **Kitty icat errors**: Ensure you're running in Kitty terminal with kitty remote control enabled
-- **Album art shows in wrong pane**: Check the debug logs at `/tmp/music_viz_debug.log`
+- **No visualization?** Make sure Cava is installed
+- **No album art?** Check if your player provides artwork via MPRIS
+- **Weird display issues?** Make sure you're using Kitty terminal
+- **Not working?** Check the debug log at `/tmp/music_viz_debug.log`
 
 ## 📜 License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project uses the MIT License - see the LICENSE file for details.
 
-## 🤝 Contributing
+## 👋 Wrap Up
 
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
-
-## 🙏 Acknowledgements
-
-- [Cava](https://github.com/karlstav/cava) - Console-based Audio Visualizer
-- [playerctl](https://github.com/altdesktop/playerctl) - Media player controller
-- [Kitty Terminal](https://sw.kovidgoyal.net/kitty/) - GPU-based terminal emulator 
+Enjoy your music with some terminal eye-candy! If you have ideas to make it better, feel free to contribute or just have fun with it. 
