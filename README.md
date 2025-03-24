@@ -108,7 +108,7 @@ terminal-music-viz/
 - **Not working?** Check the debug log at `/tmp/music_viz_debug.log`
 
 ## 👾 known bugs 
-- **when changing songs, it causes the albumm cover to show in the cava pane which i dont know why is happening if you happen to know why or can help me out, try to make changes i will merge them
+- **when changing songs, it causes the albumm cover to show in the cava pane which i dont know why is happening if you happen to know why or can help me out, try to make changes i will merge them**
 ![Known bugs](knownbugs.gif)  
 
 ## 📜 License
